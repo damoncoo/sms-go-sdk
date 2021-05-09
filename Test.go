@@ -8,19 +8,19 @@ import (
 func main() {
 
 	params := make(map[string]interface{}, 0)
-	params["code"] = 1517
+	params["code"] = 151713
 
 	client := sms.NewClient()
-	client.SetAppId("xxxxx")
-	client.SetSecretKey("xxxxxx")
+	client.SetAppId("hw_10128")
+	client.SetSecretKey("8a0db761fb7ac11a9d489c2c7d1cf138")
 
 	request := sms.NewRequest()
 	request.SetMethod("sms.message.send")
 	request.SetBizContent(sms.TemplateMessage{
-		Mobile:     []string{"13800138000"},
+		Mobile:     []string{"13570276759"},
 		Type:       0,
-		Sign:       "好为科技",
-		TemplateId: "ST_2019043000000001",
+		Sign:       "易知",
+		TemplateId: "ST_2020101100000007",
 		SendTime:   "",
 		Params:     params,
 	})

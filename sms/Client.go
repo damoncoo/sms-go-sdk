@@ -2,7 +2,6 @@ package sms
 
 import (
 	"crypto/md5"
-	"crypto/tls"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -82,7 +81,7 @@ func (c *Client) Execute(request *Request) (string, error) {
 	for name, value := range post {
 		data.Set(name, value)
 	}
-	
+
 	client := &http.Client{}
 	req, _ := http.NewRequest("POST", "http://api.shansuma.com/gateway.do", strings.NewReader(data.Encode()))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
