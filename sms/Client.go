@@ -82,11 +82,12 @@ func (c *Client) Execute(request *Request) (string, error) {
 	for name, value := range post {
 		data.Set(name, value)
 	}
-
+	
+	client := &http.Client{}
 	req, _ := http.NewRequest("POST", "http://api.shansuma.com/gateway.do", strings.NewReader(data.Encode()))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Set("User-Agent", "Mozilla 5.0 GO-SMS-SDK")
-	res, err := c.Do(req)
+	res, err := client.Do(req)
 	if err != nil {
 		return "", err
 	}
