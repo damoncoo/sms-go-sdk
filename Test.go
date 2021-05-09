@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/haoweitech/sms-go-sdk/sms"
+	"github.com/damoncoo/sms-go-sdk/sms"
 	"fmt"
 )
 
