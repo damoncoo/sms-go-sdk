@@ -89,7 +89,7 @@ func (c *Client) Execute(request *Request) (string, error) {
 	client := &http.Client{
 		Transport: transport,
 	}
-	req, _ := http.NewRequest("POST", "http://api.haowei.tech/gateway.do", strings.NewReader(data.Encode()))
+	req, _ := http.NewRequest("POST", "https://api.haowei.tech/gateway.do", strings.NewReader(data.Encode()))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Set("User-Agent", "Mozilla 5.0 GO-SMS-SDK")
 	res, err := client.Do(req)
